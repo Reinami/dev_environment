@@ -6,3 +6,13 @@ alias vim="nvim"
 alias ll="ls -la"
 
 export XDG_CONFIG_HOME=$HOME/.config
+
+# Add SSH keys if they aren't there
+if [ -z "$SSH_AUTH_SOCL" ]; then
+    eval `ssh-agent -s`
+    for keyfile in ~/.ssh/id_rsa*; do
+        if [[ "$keyfile" != *.pub ]]; then
+            ssh-add "$keyfile"
+        fi
+    done
+fi
