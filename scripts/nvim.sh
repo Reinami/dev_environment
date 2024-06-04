@@ -6,6 +6,6 @@ function nvim_symlink() {
     
     nvim_directory="$root_dir/nvim"
 
-    ln -s $nvim_directory ~/nvim
+    ln -s $nvim_directory $XDG_CONFIG_HOME/nvim
 }
 

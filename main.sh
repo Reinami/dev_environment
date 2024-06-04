@@ -108,6 +108,8 @@ add_option "h" "help" "Help Menu" "" "usage"
 add_option "" "hi" "Says hello, test command" "hello.sh" "say_hello"
 add_option "n" "nvim-sync" "Sets up nvim symlink" "nvim.sh" "nvim_symlink"
 add_option "g" "git-ssh-keygen" "Generates a git SSH key and adds to agent" "git.sh" "generate_ssh_key" 
+add_option "" "init" "Inits the dev environment by installing deps such as gcc" "init.sh" "init_env"
+add_option "b" "bash" "Sets up bashrc" "bash.sh" "setup_bashrc"
 
 if [[ $# -eq 0 ]]; then
     usage

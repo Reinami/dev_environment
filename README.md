@@ -1,3 +1,13 @@
+# install deps
+
+# run ./main.sh --init
+
+sudo apt-get install gcc
+
+# run ./main.sh -b
+
+to setup bash
+
 # install neovim
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage 
@@ -19,7 +29,8 @@ nvim
 
 # install packer
 
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim # Make sure XDG_CONFIG_HOME is set properly to $HOME/.config/nvim if it is not, you may need to setup init.vim file in whatever directory it is set to set it as a possible runtime path.
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim 
+# Make sure XDG_CONFIG_HOME is set properly to $HOME/.config/nvim if it is not, you may need to setup init.vim file in whatever directory it is set to set it as a possible runtime path.
 
 # run ./main.sh -n
 
@@ -27,6 +38,3 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nv
 
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
-# run ./main.sh -b
-
-to setup bash

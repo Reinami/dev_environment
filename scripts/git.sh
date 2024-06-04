@@ -37,6 +37,9 @@ function generate_ssh_key() {
         exit 1
     fi
 
+    git config --global user.name "$name"
+    git config --global user.email "$email"
+
     echo "SSH Key setup is complete"
     echo "Name: $name"
     echo "Email: $email"
