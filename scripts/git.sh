@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function generate_ssh_key() {
+function setup_git() {
     while true; do
         read -p "Enter your name: " name
         read -p "Enter your email: " email
