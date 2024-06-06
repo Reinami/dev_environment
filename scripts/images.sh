@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+function setup_images() {
+    script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    root_dir="$( dirname "$script_dir" )"
+    
+    image_directory="$root_dir/images"
+
+    ln -s $image_directory $HOME/.backgrounds_images
+}

@@ -16,3 +16,9 @@ if [ -z "$SSH_AUTH_SOCL" ]; then
         fi
     done
 fi
+
+# If on WSL, setup some env variables for later use
+if [ -z "$WSL_DISTRO_NAME" ]; then
+    export WSL_CONFIG_PATH=
+fi
+
