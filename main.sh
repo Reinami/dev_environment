@@ -110,6 +110,8 @@ add_option "n" "nvim-sync" "Sets up nvim" "nvim.sh" "setup_nvim"
 add_option "g" "git-ssh-keygen" "Generates a git SSH key and adds to agent" "git.sh" "setup_git" 
 add_option "d" "dependencies" "Installs deps such as gcc" "deps.sh" "install_deps"
 add_option "b" "bash" "Sets up bashrc" "bash.sh" "setup_bashrc"
+add_option "w" "wsl" "Sets up stuff specific to wsl" "wsl.sh" "setup_wsl"
+add_option "" "init" "Sets up dev environment with all basic" "init.sh" "init_dev_environment"
 
 if [[ $# -eq 0 ]]; then
     usage
