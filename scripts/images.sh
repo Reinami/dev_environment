@@ -7,5 +7,5 @@ function setup_images() {
     
     image_directory="$root_dir/images"
 
-    ln -s $image_directory $HOME/.backgrounds_images
+    ln -s $image_directory $HOME/.background_images
 }
