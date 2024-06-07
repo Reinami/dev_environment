@@ -21,22 +21,3 @@ if [ -z "$SSH_AUTH_SOCL" ]; then
     done
 fi
 
-# If WSL and WSL settings.json file is setup, set the env for it
-if [ -z "$WSL_DISTRO_NAME" ]; then
-    echo "Distro name exists"
-    config_file_location="$HOME/wsl/wsl_config_path.txt"
-
-    if [ -f "$config_file_location" ]; then
-        echo "File exists"
-        FILE_CONTENTS=$(cat "$config_file_location")
-
-        export WSL_SETTINGS_JSON_PATH="$FILE_CONTENTS"
-    fi
-fi
-
-# If background images are used, set the path to them in the env
-images_dir_path="$HOME/.background_images"
-if [ -d "$images_dir_path" ]; then
-    echo "images dir exists"
-    export BACKGROUND_IMAGES_DIR="$images_dir_path"
-fi
