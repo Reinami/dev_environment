@@ -10,27 +10,39 @@ YELLOW_BG='\e[0;103m'
 NC='\033[0m'  # No Color
 
 log_task() {
-    echo -e "${PURPLE}[TASK] $1${NC}"
+    local caller_script
+    caller_script=$(basename "${BASH_SOURCE[1]}")
+    echo -e "${PURPLE}[TASK] $caller_script - $1${NC}"
 }
 
 log_note() {
-    echo -e "${CYAN}[NOTE] $1${NC}"
+    local caller_script
+    caller_script=$(basename "${BASH_SOURCE[1]}")
+    echo -e "${CYAN}[NOTE] $caller_script - $1${NC}"
 }
 
 log_info() {
-    echo -e "${BLUE}[INFO] $1${NC}"
+    local caller_script
+    caller_script=$(basename "${BASH_SOURCE[1]}")
+    echo -e "${BLUE}[INFO] $caller_script - $1${NC}"
 }
 
 log_success() {
-    echo -e "${GREEN}[SUCCESS] $1${NC}"
+    local caller_script
+    caller_script=$(basename "${BASH_SOURCE[1]}")
+    echo -e "${GREEN}[SUCCESS] $caller_script - $1${NC}"
 }
 
 log_warning() {
-    echo -e "${YELLOW}[WARNING] $1${NC}"
+    local caller_script
+    caller_script=$(basename "${BASH_SOURCE[1]}")
+    echo -e "${YELLOW}[WARNING] $caller_script - $1${NC}"
 }
 
 log_error() {
-    echo -e "${RED}[ERROR] $1${NC}"
+    local caller_script
+    caller_script=$(basename "${BASH_SOURCE[1]}")
+    echo -e "${RED}[ERROR] $caller_script - $1${NC}"
 }
 
 log_dry() {

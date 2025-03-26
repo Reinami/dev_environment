@@ -18,3 +18,14 @@ if [ "$DRY_RUN" = true ]; then
     notify "$script_name: (dry-run simulated notification)"
     exit 0
 fi
+
+case "$OS_TYPE" in
+    pop)
+        sudo apt update
+        sudo apt full-upgrade
+        ;;
+    *)
+        log_error "Unsupported OS $OS_TYPE"
+        exit 1
+        ;;
+esac
