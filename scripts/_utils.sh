@@ -60,7 +60,7 @@ detect_os() {
                 os="unknown"
                 ;;
         esac
-    elif [[ "OSTYPE" == "darwin"* ]]; then
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
         os="macos"
     else
         os="unknown"
