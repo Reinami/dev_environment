@@ -11,10 +11,31 @@ scripts=(
     "neovim.sh"
 )
 
+supported_os=(
+    "pop"
+)
+
 # Setup scripts directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/scripts"
 chmod +x "$SCRIPT_DIR"/*.sh
 source "$SCRIPT_DIR/_utils.sh"
+
+# Setup ENV
+detect_os
+
+# Validations
+found=false
+for os in "${supported_os[@]}"; do
+    if [[ "$os" == "$OS_TYPE" ]]; then
+        found=true
+        break
+    fi
+done
+
+if ! $found; then
+    log_error "Detect \"$OS_TYPE\" as operating system, it is not currently supported."
+    exit 1
+fi
 
 # Create or clear the notifications file
 NOTIFY_FILE="$SCRIPT_DIR/notifications.tmp"

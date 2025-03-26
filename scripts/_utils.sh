@@ -66,5 +66,5 @@ detect_os() {
         os="unknown"
     fi
 
-    OS_TYPE="$os"
+    export OS_TYPE="$os"
 }
