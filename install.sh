@@ -22,9 +22,8 @@ export NOTIFY_FILE  # Export so that sub-scripts can access it
 # Run the thing
 log_task "Setting up entire environment"
 
-# Check if --dry-run is present among all arguments
-if [[ " $@ " =~ " --dry-run " ]]; then
-
+# Check if --dry is present among all arguments
+if [[ " $@ " =~ " --dry" ]]; then
     log_dry log_info "Running in dry-run mode. No changes will be applied."
 fi
 

@@ -7,7 +7,7 @@ source "$SCRIPT_DIR/_utils.sh"
 DRY_RUN=false
 
 for arg in "$@"; do
-    if [ "$arg" == "--dry-run" ]; then
+    if [ "$arg" == "--dry" ]; then
         DRY_RUN=true
         break
     fi
