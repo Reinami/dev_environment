@@ -2,6 +2,7 @@
 
 scripts=(
     "os.sh"
+    "bash.sh"
     "git.sh"
     "python.sh"
     "golang.sh"
