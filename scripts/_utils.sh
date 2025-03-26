@@ -47,3 +47,24 @@ notify() {
         echo "$1" >> "$NOTIFY_FILE"
     fi
 }
+
+detect_os() {
+    local os=""
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        case "$ID" in
+            pop)
+                os="pop"
+                ;;
+            *)
+                os="unknown"
+                ;;
+        esac
+    elif [[ "OSTYPE" == "darwin"* ]]; then
+        os="macos"
+    else
+        os="unknown"
+    fi
+
+    OS_TYPE="$os"
+}

@@ -18,3 +18,6 @@ if [ "$DRY_RUN" = true ]; then
     notify "$script_name: (dry-run simulated notification)"
     exit 0
 fi
+
+detect_os
+echo $OS_TYPE
