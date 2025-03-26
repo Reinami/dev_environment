@@ -9,7 +9,7 @@ scripts=(
 )
 
 # Setup scripts directory
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/scripts"
 chmod +x "$SCRIPT_DIR"/*.sh
 source "$SCRIPT_DIR/_utils.sh"
 
