@@ -7,6 +7,7 @@ scripts=(
     "git.sh"
     "python.sh"
     "golang.sh"
+    "docker.sh"
     "neovim.sh"
 )
 
