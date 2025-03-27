@@ -5,6 +5,7 @@ script_name="$(basename "${BASH_SOURCE[0]}")"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/_utils.sh"
 DRY_RUN=false
+setup_script
 
 for arg in "$@"; do
     if [ "$arg" == "--dry" ]; then

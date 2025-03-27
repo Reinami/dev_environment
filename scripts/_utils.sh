@@ -90,3 +90,7 @@ append_to_bashrc() {
         log_warning "$line is already present in $BASH_RC"
     fi
 }
+
+setup_script() {
+    detect_os
+}
