@@ -5,7 +5,7 @@ This is my own personal development environment meant to be spun up on any machi
 Simply load up any OS command prompt (preferably WSL using ubuntu for now, anything else is untested) and run this command:
 
 ```
-curl -L https://github.com/Reinami/dev_environment/archive/refs/heads/master.tar.gz | tar xz && mv .dotfiles-master .dotfiles && cd .dotfiles && ./install.sh
+curl -L https://github.com/Reinami/dev_environment/archive/refs/heads/master.tar.gz | tar xz && mv dev_environment-master dev_environment && cd dev_environment && ./install.sh
 ```
 
 ## Fonts
