@@ -85,7 +85,7 @@ append_to_bashrc() {
     local line="$1"
     if ! grep -Fxq "$line" "$HOME/.bashrc"; then
         log_info "Appending: $line to $HOME/.bashrc"
-        log_info "$line" >> "$HOME/.bashrc"
+        echo "$line" >> "$HOME/.bashrc"
     else
         log_warning "$line is already present in $HOME/.bashrc"
     fi
