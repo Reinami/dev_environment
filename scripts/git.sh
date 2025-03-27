@@ -18,3 +18,6 @@ if [ "$DRY_RUN" = true ]; then
     notify "$script_name: (dry-run simulated notification)"
     exit 0
 fi
+
+log_note "Starting $script_name..."
+log_success "Done with $script_name"

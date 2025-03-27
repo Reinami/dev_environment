@@ -19,4 +19,5 @@ if [ "$DRY_RUN" = true ]; then
     exit 0
 fi
 
+log_note "Starting $script_name..."
 # TODO: ADD YOUR STUFF HERE

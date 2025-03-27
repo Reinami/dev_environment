@@ -19,6 +19,8 @@ if [ "$DRY_RUN" = true ]; then
     exit 0
 fi
 
+log_note "Starting $script_name..."
+
 case "$OS_TYPE" in
     pop)
         sudo apt update
@@ -30,3 +32,5 @@ case "$OS_TYPE" in
         exit 1
         ;;
 esac
+
+log_success "Done with $script_name"
