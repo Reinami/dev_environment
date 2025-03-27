@@ -24,6 +24,20 @@ log_note "Starting $script_name..."
 
 case "$OS_TYPE" in
     pop)
+        while true; do
+            echo
+            read -p "Do you want to setup git?: " confirm
+            echo
+
+            if [[ $confirm == [yY] ]]; then
+                break
+            fi
+
+            if [[ $cofirm == [nN] ]]; then
+                break
+                exit 0
+            fi
+
         sudo apt install git
 
         if [[ ! -d "$HOME/.ssh" ]]; then
