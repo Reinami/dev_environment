@@ -83,11 +83,11 @@ detect_os() {
 
 append_to_bashrc() {
     local line="$1"
-    if ! grep -Fxq "$line" "$BASH_RC"; then
-        log_info "Appending: $line to $BASH_RC"
-        log_info "$line" >> "$BASH_RC"
+    if ! grep -Fxq "$line" "$HOME/.bashrc"; then
+        log_info "Appending: $line to $HOME/.bashrc"
+        log_info "$line" >> "$HOME/.bashrc"
     else
-        log_warning "$line is already present in $BASH_RC"
+        log_warning "$line is already present in $HOME/.bashrc"
     fi
 }
 
