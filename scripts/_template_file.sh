@@ -20,4 +20,16 @@ if [ "$DRY_RUN" = true ]; then
 fi
 
 log_note "Starting $script_name..."
+
 # TODO: ADD YOUR STUFF HERE
+case "$OS_TYPE" in
+    pop)
+        echo "TODO"
+        ;;
+    *)
+        log_error "Unsupported OS $OS_TYPE"
+        exit 1
+        ;;
+esac
+
+log_success "Done with $script_name"

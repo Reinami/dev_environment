@@ -20,4 +20,19 @@ if [ "$DRY_RUN" = true ]; then
 fi
 
 log_note "Starting $script_name..."
+
+case "$OS_TYPE" in
+    pop)
+        curl -fsSL https://pyenv.run | bash
+
+        append_to_bashrc 'export PYENV_ROOT="$HOME/.pyenv"'
+        append_to_bashrc '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"'
+        append_to_bashrc 'eval "$(pyenv init - bash)"'
+        ;;
+    *)
+        log_error "Unsupported OS $OS_TYPE"
+        exit 1
+        ;;
+esac
+
 log_success "Done with $script_name"

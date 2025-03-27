@@ -20,4 +20,16 @@ if [ "$DRY_RUN" = true ]; then
 fi
 
 log_note "Starting $script_name..."
+
+case "$OS_TYPE" in
+    pop)
+        rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.1.linux-amd64.tar.gz
+        append_to_bashrc 'export PATH=$PATH:/usr/local/go/bin'
+        ;;
+    *)
+        log_error "Unsupported OS $OS_TYPE"
+        exit 1
+        ;;
+esac
+
 log_success "Done with $script_name"

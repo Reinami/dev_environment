@@ -25,7 +25,10 @@ case "$OS_TYPE" in
     pop)
         sudo apt update
         sudo apt full-upgrade -y
-        sudo apt install gcc cron jq bat -y
+        sudo apt install gcc cron jq bat ca-certificates curl -y
+
+        sudo systemctl start cron
+        sudo systemctl enable cron
         ;;
     *)
         log_error "Unsupported OS $OS_TYPE"

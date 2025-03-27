@@ -20,4 +20,18 @@ if [ "$DRY_RUN" = true ]; then
 fi
 
 log_note "Starting $script_name..."
+
+case "$OS_TYPE" in
+    pop)
+        sudo apt install neovim
+
+        append_to_bashrc "alias oldvim='vim'"
+        append_to_bashrc "alias vim='nvim'"
+        ;;
+    *)
+        log_error "Unsupported OS $OS_TYPE"
+        exit 1
+        ;;
+esac
+
 log_success "Done with $script_name"
