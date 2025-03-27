@@ -22,7 +22,8 @@ fi
 case "$OS_TYPE" in
     pop)
         sudo apt update
-        sudo apt full-upgrade
+        sudo apt full-upgrade -y
+        sudo apt install gcc cron jq bat -y
         ;;
     *)
         log_error "Unsupported OS $OS_TYPE"
