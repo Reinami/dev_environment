@@ -33,10 +33,10 @@ case "$OS_TYPE" in
                 break
             fi
 
-            if [[ $cofirm == [nN] ]]; then
-                break
+            if [[ $confirm == [nN] ]]; then
                 exit 0
             fi
+        done
 
         sudo apt install git
 
@@ -101,6 +101,7 @@ case "$OS_TYPE" in
         ssh_key_paste=$(cat $GIT_SSH_KEY)
         notify "$ssh_key_paste"
         ;;
+
         *)
         log_error "Unsupported OS $OS_TYPE"
         exit 1
