@@ -26,9 +26,11 @@ case "$OS_TYPE" in
         cp git/.git-prompt.sh ~/
         git_prompt_line="PROMPT_COMMAND='PS1_CMD1=\$(__git_ps1 \" (%s)\")'; PS1='[\\[\\e[32m\\]\\u\\[\\e[0m\\]@\\[\\e[95m\\]\\h\\[\\e[0m\\] \\[\\e[96m\\]\\w\\[\\e[0m\\]]\\[\\e[90m\\]\${PS1_CMD1}\\[\\e[0m\\] \\[\\e[91m\\]λ\\[\\e[0m\\] '"
         git_source_line="source ~/.git-prompt.sh"
+        mkdir dev
 
         append_to_bashrc "$git_prompt_line"
         append_to_bashrc "$git_source_line"
+        append_to_bashrc "alias dev='cd ~/dev'"
         ;;
     *)
         log_error "Unsupported OS $OS_TYPE"
