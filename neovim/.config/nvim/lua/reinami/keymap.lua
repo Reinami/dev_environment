@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>exec", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- opens up error for lsp
-vim.keymap.set("n", "<leader>`", vim.diagnostic.open_float)
+vim.keymap.set("n", "<M-e>", vim.diagnostic.open_float)
 
 -- jumps to definition using lsp
 vim.keymap.set("n", "<C-Space>", vim.lsp.buf.definition, { noremap = true, silent = true })
