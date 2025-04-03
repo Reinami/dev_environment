@@ -45,7 +45,7 @@ return {
             require("lspconfig").lua_ls.setup(lsp_zero.nvim_lua_ls())
 
             -- Golang-specific setup
-            local go_format_group = vim.api.nvim_create_autocmd("GoFormat", {})
+            local go_format_group = vim.api.nvim_create_augroup("GoFormat", {})
             require("lspconfig").gopls.setup({
                 on_attach = function(client, bufnr)
                     -- Enable formatting on save
