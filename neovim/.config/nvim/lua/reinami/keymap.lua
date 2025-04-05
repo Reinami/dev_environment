@@ -13,7 +13,6 @@ vim.keymap.set("n", "<C-Space>", vim.lsp.buf.definition, { noremap = true, silen
 vim.keymap.set("n", "dd", '"_dd', { noremap = true, silent = true })
 
 -- binds ctrl + alt + down to copy line down
-
 local function copy_line_below()
     local current_line = vim.api.nvim_get_current_line()
     vim.api.nvim_command("normal! o" .. current_line)
