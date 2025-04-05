@@ -9,6 +9,7 @@ scripts=(
     "golang.sh"
     "docker.sh"
     "neovim.sh"
+    "wsl.sh"
 )
 
 supported_os=(

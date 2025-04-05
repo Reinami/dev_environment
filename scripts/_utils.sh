@@ -84,6 +84,14 @@ detect_os() {
     export OS_TYPE="$os"
 }
 
+detect_wsl() {
+    if [ -e /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+        export IS_WSL=true
+    else
+        export IS_WSL=false
+    fi
+}
+
 append_to_bashrc() {
     local line="$1"
     if ! grep -Fxq "$line" "$HOME/.bashrc"; then
