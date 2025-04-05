@@ -28,7 +28,7 @@ case "$OS_TYPE" in
         ;;
     ubuntu)
         if [ "$IS_WSL" = "true" ]; then
-            sudo apt install unzip
+            sudo apt install unzip -y
 
             url="https://github.com/equalsraf/win32yank/releases/latest/download/win32yank-x64.zip"
             executable="win32yank.exe"

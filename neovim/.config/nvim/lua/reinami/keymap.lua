@@ -26,30 +26,8 @@ local function copy_line_below_insert()
     vim.api.nvim_command("startinsert")
 end
 
-local function copy_selection_below()
-    local lines, end_line = get_visual_selection_lines()
-    -- insert lines after selection
-    vim.api.nvim_buf_set_lines(0, end_line, end_line, false, lines)
-end
-
-local function smart_copy_down()
-    local mode = vim.api.nvim_get_mode().mode
-    if mode:match("v") or mode:match("V") then
-        copy_selection_below()
-    else
-        copy_line_below()
-    end
-end
-
-local function smart_copy_down_insert()
-    vim.api.nvim_command("stopinsert")
-    smart_copy_down()
-    vim.api.nvim_command("startinsert")
-end
-
-vim.keymap.set("n", "<C-M-Down>", smart_copy_down, { noremap = true, silent = true })
-vim.keymap.set("i", "<C-M-Down>", smart_copy_down_insert, { noremap = true, silent = true })
-vim.keymap.set("v", "<C-M-Down>", smart_copy_down, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-M-Down>", copy_line_below, { noremap = true, silent = true })
+vim.keymap.set("i", "<C-M-Down>", copy_line_below_insert, { noremap = true, silent = true })
 
 -- binds ctrl + down to add new empty line below
 
