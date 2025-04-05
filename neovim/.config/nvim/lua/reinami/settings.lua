@@ -33,33 +33,3 @@ vim.opt.colorcolumn = "80"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- clipboard shenanigans for WSL
-
-vim.g.clipboard = {
-    name = "WslClipboard",
-    copy = {
-        ["+"] = "clip.exe",
-        ["*"] = "clip.exe"
-    },
-    paste = {
-        ["+"] = "powershell.exe -Command Get-Clipboard",
-        ["*"] = "powershell.exe -Command Get-Clipboard"
-    },
-    cache_enabled = 0
-}
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-    pattern = "*",
-    callback = function()
-        -- Use pcall to safely execute the substitution
-        pcall(vim.cmd, [[%s/\r//g]])
-    end,
-})
-
-vim.api.nvim_create_autocmd("TextChangedI", {
-    pattern = "*",
-    callback = function()
-        -- Safe execution with pcall to suppress errors
-        pcall(vim.cmd, [[%s/\r//g]])
-    end,
-})
