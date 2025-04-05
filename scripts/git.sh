@@ -23,10 +23,10 @@ fi
 log_note "Starting $script_name..."
 
 case "$OS_TYPE" in
-    pop)
+    pop|ubuntu)
         while true; do
             echo
-            read -p "Do you want to setup git?: " confirm
+            read -p "Do you want to setup git? (y/n): " confirm
             echo
 
             if [[ $confirm == [yY] ]]; then

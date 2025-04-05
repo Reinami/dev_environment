@@ -13,7 +13,7 @@ scripts=(
 
 supported_os=(
     "pop"
-    "unknown"
+    "ubuntu"
 )
 
 # Setup scripts directory

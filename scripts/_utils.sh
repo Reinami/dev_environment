@@ -68,6 +68,9 @@ detect_os() {
             pop)
                 os="pop"
                 ;;
+            ubuntu)
+                os="ubuntu"
+                ;;
             *)
                 os="unknown"
                 ;;

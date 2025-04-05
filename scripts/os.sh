@@ -23,7 +23,7 @@ fi
 log_note "Starting $script_name..."
 
 case "$OS_TYPE" in
-    pop)
+    pop|ubuntu)
         sudo apt update
         sudo apt full-upgrade -y
         sudo apt install gcc cron jq bat ca-certificates curl -y

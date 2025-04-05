@@ -23,7 +23,7 @@ fi
 log_note "Starting $script_name..."
 
 case "$OS_TYPE" in
-    pop)
+    pop|ubuntu)
         curl -fsSL https://pyenv.run | bash
 
         append_to_bashrc 'export PYENV_ROOT="$HOME/.pyenv"'
