@@ -40,6 +40,9 @@ return {
                 filters = {
                     dotfiles = false,
                 },
+                git = {
+                    ignore = false,
+                },
                 on_attach = on_tree_attach,
             })
 
