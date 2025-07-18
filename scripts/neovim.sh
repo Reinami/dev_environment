@@ -35,6 +35,7 @@ case "$OS_TYPE" in
         append_to_bashrc "alias vim='nvim'"
 
         mkdir -p ~/.config && cp -r ./neovim/.config/nvim/ ~/.config/nvim/
+        ln -s ./neovim/.config/nvim ~/.config/nvim
         ;;
     *)
         log_error "Unsupported OS $OS_TYPE"
