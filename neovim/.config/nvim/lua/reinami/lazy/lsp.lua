@@ -1,3 +1,5 @@
+require('java').setup()
+
 return {
     -- Core LSP and Mason
     {
@@ -71,6 +73,9 @@ return {
                     end
                 end,
             })
+
+            -- Java stuff
+            require("lspconfig").jdtls.setup({})
 
             -- Configure CMP
             local cmp = require("cmp")
