@@ -1,5 +1,3 @@
-require('java').setup()
-
 return {
     -- Core LSP and Mason
     {
