@@ -19,3 +19,9 @@ curl -L https://github.com/Reinami/dev_environment/archive/refs/heads/master.tar
 
 
 Follow all prompts on screen and you will be all set
+
+## After install
+
+- I like to reclone my repo so i can make changes to it from any system i'm on.
+- Symlink the new cloned version of the repo
+- ```ln -s ~/dev/dev_environment/neovim/.config/* ~/.config/```

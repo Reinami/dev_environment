@@ -52,6 +52,11 @@ case "$OS_TYPE" in
 
             # Clean up
             rm -rf "$temp_dir" || log_error "Failed to remove temporary directory $temp_dir."
+
+            # Make docker work
+            append_to_bashrc 'export PATH=$PATH:/mnt/wsl/docker-desktop/cli-tools'
+            sudo ln -s /mnt/wsl/docker-desktop/cli-tools/docker-credential-desktop.exe /usr/local/bin/docker-credential-desktop.exe
+            mkdir -p ~/.docker && echo '{ "credsStore": "desktop.exe" }' | tee ~/.docker/config.json > /dev/null
         else
             log_info "Not running WSL, doing nothing..."
         fi
