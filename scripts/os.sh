@@ -26,7 +26,7 @@ case "$OS_TYPE" in
     pop|ubuntu)
         sudo apt update
         sudo apt full-upgrade -y
-        sudo apt install gcc cron jq bat ca-certificates curl btop unzip -y
+        sudo apt install gcc cron jq bat ca-certificates curl btop unzip make -y
 
         sudo systemctl start cron
         sudo systemctl enable cron

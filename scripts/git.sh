@@ -77,9 +77,9 @@ case "$OS_TYPE" in
         git config --global user.email "$email"
 
         # Add ssh-agent startup block to ~/.bashrc if it doesn't exist
-        ssh_agent_block="# Start ssh-agent if not already running\nif ! pgrep -u \"\$USER\" ssh-agent > /dev/null; then\n    eval \"\$(ssh-agent -s)\"\nfi\nssh-add \"\$HOME/.ssh/id_rsa_$name\" >/dev/null 2>&1"
+        ssh_agent_block="# Start ssh-agent; eval \"\$(ssh-agent -s)\" >/dev/null 2>&1; ssh-add \"\$HOME/.ssh/id_rsa_$name\" >/dev/null 2>&1"
 
-        if ! grep -Fxq "# Start ssh-agent if not already running" "$HOME/.bashrc"; then
+        if ! grep -Fxq "# Start ssh-agent" "$HOME/.bashrc"; then
             echo -e "\n$ssh_agent_block" >> "$HOME/.bashrc"
         fi
 

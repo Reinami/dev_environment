@@ -85,7 +85,7 @@ detect_os() {
 }
 
 detect_wsl() {
-    if [ -e /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+    if [ -e /proc/sys/fs/binfmt_misc/WSLInterop-late ]; then
         export IS_WSL=true
     else
         export IS_WSL=false
