@@ -16,12 +16,16 @@ return {
             { "hrsh7th/cmp-path" },
             { "saadparwaiz1/cmp_luasnip" },
             { "L3MON4D3/LuaSnip" },
+
+            { "mfussenegger/nvim-jdtls" },
         },
         config = function()
             local lsp_zero = require("lsp-zero")
 
             -- Use the recommended preset
             lsp_zero.preset("recommended")
+
+            local noop = function() end
 
             -- Mason setup
             require("mason").setup({})
@@ -33,11 +37,14 @@ return {
                     "jsonls",
                     "ts_ls",
                     "cssls",
+                    "jdtls",
                 },
                 handlers = {
                     function(server_name)
                         require("lspconfig")[server_name].setup({})
                     end,
+
+                    jdtls = noop,
                 },
             })
 
