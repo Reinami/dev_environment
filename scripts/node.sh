@@ -34,6 +34,7 @@ case "$OS_TYPE" in
         nvm use node
 
         npm install --global yarn
+        npm install -g @openai/codex
         append_to_bashrc 'export PATH="$(yarn global bin):$PATH"'
         ;;
     *)
