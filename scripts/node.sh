@@ -32,6 +32,10 @@ case "$OS_TYPE" in
 
         nvm install node
         nvm use node
+
+        npm install --global yarn
+        npm install -g @openai/codex
+        append_to_bashrc 'export PATH="$(yarn global bin):$PATH"'
         ;;
     *)
         log_error "Unsupported OS $OS_TYPE"

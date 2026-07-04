@@ -33,12 +33,16 @@ return {
                 },
                 view = {
                     width = 30,
+                    relativenumber = true,
                 },
                 renderer = {
                     group_empty = true,
                 },
                 filters = {
                     dotfiles = false,
+                },
+                git = {
+                    ignore = false,
                 },
                 on_attach = on_tree_attach,
             })

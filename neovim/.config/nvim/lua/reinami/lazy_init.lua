@@ -13,6 +13,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = "reinami.lazy",
+    spec = {
+        { import = "reinami.lazy" },
+        { import = "reinami.lazy.colors" },
+    },
     change_detection = { notify = false }
 })
