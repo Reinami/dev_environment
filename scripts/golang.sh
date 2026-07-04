@@ -1,5 +1,7 @@
 #!/bin/bash
 
+GO_VERSION="${GO_VERSION:-latest}"
+
 # Setup scripts directory
 script_name="$(basename "${BASH_SOURCE[0]}")"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -24,11 +26,17 @@ log_note "Starting $script_name..."
 
 case "$OS_TYPE" in
     pop|ubuntu)
-        curl -LO https://go.dev/dl/go1.25.6.linux-amd64.tar.gz
-        sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.25.6.linux-amd64.tar.gz
+        if [ "$GO_VERSION" = "latest" ]; then
+            GO_VERSION="$(curl -fsSL https://go.dev/VERSION?m=text | head -n 1)"
+        fi
+
+        go_archive="${GO_VERSION}.linux-amd64.tar.gz"
+
+        curl -fsSLO "https://go.dev/dl/${go_archive}"
+        sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf "$go_archive"
         append_to_bashrc 'export PATH=$PATH:/usr/local/go/bin'
-        
-        rm go1.25.6.linux-amd64.tar.gz
+
+        rm "$go_archive"
         ;;
     *)
         log_error "Unsupported OS $OS_TYPE"
